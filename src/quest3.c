@@ -1,18 +1,20 @@
 #include <stdio.h>
-int fibonacci(int N)  
-{
-  if (N == 1 || N == 2)
-    return 1; 
-  return fibonacci(N - 1) + fibonacci(N - 2); 
+int fibonacci(int N);
+
+int main() {
+    int N;
+    int x;
+    scanf("%d", &N);
+    if (N < 0)
+        printf("n/a");
+    else if (N == 0)
+        printf("0");
+    else
+        printf("%d", fibonacci(N));
+    return 0;
 }
-int main()
-{
-  int N;
-  int x;
-  scanf("%d", &N); 
-  for (int i = 1; i <= N; i++) 
-    x = fibonacci(i);
-  printf("%d", x);  
-  getchar();
-  return 0;
+
+int fibonacci(int N) {
+    if (N == 1 || N == 2) return 1;
+    return fibonacci(N - 1) + fibonacci(N - 2);
 }

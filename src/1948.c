@@ -1,39 +1,39 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
-int del(int a, int b){
+int del(int a, int b) {
     int iter = 0;
-    while (a >=b) {
+    while (a >= b) {
         a = a - b;
         ++iter;
     }
     return iter;
 }
 
-int delest(int a, int b){
+int delest(int a, int b) {
     int iter = 0;
-    while (a>= b){
-        a = a -b;
+    while (a >= b) {
+        a = a - b;
         ++iter;
     }
     return a;
 }
 
-int result (int a) {
+int result(int a) {
     if (a < 0) {
         a = -a;
     }
     int y;
     int i = 2;
-    y = a; 
-    while (a != 1){
-        if (delest(a,i) == 0){
+    y = a;
+    while (a != 1) {
+        if (delest(a, i) == 0) {
             y = i;
             a = del(a, i);
         } else if (i + i > a) {
             i = a;
-        } else 
-        ++i;
+        } else
+            ++i;
     }
     return y;
 }
